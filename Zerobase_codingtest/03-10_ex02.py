@@ -5,3 +5,12 @@ def solution(n):
         cnt += i
 
     return cnt
+
+# 정답코드
+def solution(n):
+    """
+    :param n: int
+    :return: int
+    """
+
+    return (1 + n) * n / 2
