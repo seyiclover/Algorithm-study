@@ -1,3 +1,25 @@
+def solution(city):
+    position = []
+
+    for i in range(len(city)):
+        for j in range(len(city[i])):
+            if city[i][j] == 0:
+                position.append(i)
+                position.append(j)
+
+    result = [[0] * len(city[0]) for _ in range(len(city))]
+
+    for i in range(len(city)):
+        for j in range(len(city[i])):
+            result[i][j] = abs(i - position[0]) + abs(j - position[1])
+
+    return result
+
+print(solution([[1, 0, 1], [1, 1, 1,], [1, 1, 1]]))
+
+
+
+<정답코드>
 import numpy
 
 
