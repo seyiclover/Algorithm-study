@@ -1,4 +1,8 @@
+# 0과 아파트의 인덱스 값 이용해서 거리를 구한다.
+# 빈 중첩 리스트를 생성해 줄 때 반복문 활용 
+
 def solution(city):
+    # 0의 위치 정보를 position에 담아준다. 
     position = []
 
     for i in range(len(city)):
@@ -6,9 +10,11 @@ def solution(city):
             if city[i][j] == 0:
                 position.append(i)
                 position.append(j)
-
+                
+    # 결과값을 담아줄 빈 리스트 생성
     result = [[0] * len(city[0]) for _ in range(len(city))]
-
+    
+    # 인덱스 값을 하나씩 순회하면서 0의 인덱스 값과의 차이를 넣어준다. 
     for i in range(len(city)):
         for j in range(len(city[i])):
             result[i][j] = abs(i - position[0]) + abs(j - position[1])
